@@ -2,52 +2,34 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Тестовая задача';
+use yii\helpers\Html;
+
+$this->title = 'Условие задачи';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-index">
+<div class="site-about">
+    <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="jumbotron">
-        <h1>Надо Вася, надо !</h1>
+    <p>
+        Тестовая задача для разработчика на Yii2.
+<p>Создать модуль выборки блюд по заданным пользователем ингредиентам.
+<p>Административная часть:
+<ul>    
+    <li>1. CRUD добавления ингредиентов.</li>   
+    <li>2. CRUD формирования блюд из этих ингредиентов.</li>
+</ul>    
+<p>Администратор может скрыть один из ингредиентов, в этом случае блюдо содержащее этот ингредиент тоже должно быть скрыто.
+<p>Пользовательская часть:
+<p>Пользователь может выбрать до 5ти ингредиентов для приготовления блюда, при этом:
+<ul>    
+    <li>1. Если найдены блюда с полным совпадением ингредиентов вывести только их.</li>
+    <li>2. Если найдены блюда с частичным совпадением ингредиентов вывести в порядке уменьшения совпадения ингредиентов вплоть до 2х.</li>
+    <li>3. Если найдены блюда с совпадением менее чем 2 ингредиента или не найдены вовсе вывести “Ничего не найдено”.</li>
+    <li>4. Если выбрано менее 2х ингредиентов не производить поиск, выдать сообщение: “Выберите больше ингредиентов”.</li>
+</ul>        
+<p>
+Создать дамп таблиц БД и их связей на основе миграций.
+</p>
 
-        <p class="lead">Голодные дети ждут твоих успехов.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
+    
 </div>

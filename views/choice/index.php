@@ -15,20 +15,21 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="binder-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title)  ?></h1>
 
 <?php
     $form = ActiveForm::begin();
 
-    // получаем всех авторов
+    // получаем все ингредиенты
     $ingredients = Ingredients::find()->all();
-    // формируем массив, с ключем равным полю 'id' и значением равным полю 'name' 
+    // формируем массив 
     $items = ArrayHelper::map($ingredients,'ingredient_id','ingredient');
     $params = [
         'prompt' => 'Выберите ингредиент'
     ];
     //echo $form->field($model, 'ingredient_id')->dropDownList($items,$params);
     
+	echo "Ctrl для выбора нескольких позиций";
     echo $form->field($model, 'choice')
     ->listBox($items,
     [
