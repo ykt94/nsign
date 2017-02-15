@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 15 2017 г., 03:19
+-- Время создания: Фев 15 2017 г., 09:50
 -- Версия сервера: 10.1.19-MariaDB
 -- Версия PHP: 5.6.28
 
@@ -41,8 +41,17 @@ INSERT INTO `binder` (`recipe_id`, `ingredient_id`) VALUES
 (1, 3),
 (1, 4),
 (2, 1),
-(2, 2),
-(3, 1);
+(2, 6),
+(3, 1),
+(3, 6),
+(3, 9),
+(4, 1),
+(4, 5),
+(4, 6),
+(4, 8),
+(6, 5),
+(6, 6),
+(6, 7);
 
 -- --------------------------------------------------------
 
@@ -64,7 +73,12 @@ INSERT INTO `ingredients` (`ingredient_id`, `ingredient`, `enable`) VALUES
 (1, 'Говядина', 0),
 (2, 'Селедка', 1),
 (3, 'Картофель', 1),
-(4, 'Молоко', 1);
+(4, 'Молоко', 1),
+(5, 'Рис', 1),
+(6, 'Лук', 1),
+(7, 'Рыба белая', 1),
+(8, 'Морковь', 1),
+(9, 'Макароны', 1);
 
 -- --------------------------------------------------------
 
@@ -84,7 +98,10 @@ CREATE TABLE `recipes` (
 INSERT INTO `recipes` (`recipe_id`, `recipe`) VALUES
 (1, 'Борщ'),
 (2, 'Котлета'),
-(3, 'Макароны');
+(3, 'Макароны по флотски'),
+(4, 'Плов'),
+(5, 'Солянка грибная'),
+(6, 'Уха');
 
 --
 -- Индексы сохранённых таблиц
@@ -117,12 +134,12 @@ ALTER TABLE `recipes`
 -- AUTO_INCREMENT для таблицы `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `ingredient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ingredient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT для таблицы `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `recipe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `recipe_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
