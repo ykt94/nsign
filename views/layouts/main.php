@@ -38,9 +38,9 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'Выбор', 'url' => ['/choice/index']],
-            ['label' => 'Ингредиенты', 'url' => ['/ingredient/index']],
-            ['label' => 'Рецепты', 'url' => ['/recipe/index']],
-            ['label' => 'Условия', 'url' => ['/site/about']],
+            ['label' => 'Ингредиенты', 'url' => ['/ingredient/index'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Рецепты', 'url' => ['/recipe/index'], 'visible' => !Yii::$app->user->isGuest],
+            //['label' => 'Условия', 'url' => ['/site/about']],
             //['label' => 'Контакты', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Логин', 'url' => ['/site/login']]
